@@ -1,0 +1,24 @@
+
+Workflow:
+
+-Riprodurre il sistema su simulink
+-Inserire k=1 nel workspace matlab ("k nominale")
+-In simulink, aprire Analysis---> Control design --> Linear analysis
+-Linear analysis tool:
+	- Analysis I/Os: root level inports and outports
+	- Parameter variation: K=1; 3/2; 2
+	- Step response e esporto la variabile che ottengo (linsys1) nel workspace matlab
+	- Sys_k1 = linsys(:,:,1), Sys_k32 = linsys(:,:,2); sys_k2 = linsys(:,:,3)
+Metodo alternativo:
+K=1 ---> sys1 = linearize("exam");
+K=3/2 --> sys32 = linearize("exam");
+K=2 --> sys2 = linearize("exam");
+
+A questo punto ho le variabili che mi servono nel workspace matlab, quindi:
+-verifico stabilità, controllabilità, osservabilità per ognuno di essi
+
+
+
+
+
+
