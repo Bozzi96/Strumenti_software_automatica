@@ -73,9 +73,14 @@ if obsv_k2
     fprintf("Sistema osservabile\n");
 end
 
-%% Per k=1 plotto risposta all'impulso e verifico la validità del teorema iniziale
+%% Per k=1 plotto risposta all'impulso e verifico la validità del teorema del valor iniziale
 
-impulse(sys_k1);
-
-
+[y,t] = impulse(sys_k1);
+plot(t,y);
+% Lunga divisione
+[num,den] = tfdata(sys_k1,'v');
+long_div = ldiv(num,den,4)
+% Verifica della validità del teorema del valor iniziale
+f0 = y(1)
+f0dot = (y(2)-y(1))/(t(2)-t(1))
 
